@@ -39,11 +39,11 @@ This project compares machine learning models trained on **clinical biomarkers**
 This work demonstrates the potential of **non-invasive diabetes screening** using lifestyle and demographic data, offering a low-cost alternative for early detection in resource-limited settings.  
 
 📊 **Repo Structure**:  
-data/
-models/
-notebooks/
-results/
-README.md
+data/<br>
+models/<br>
+notebooks/<br>
+results/<br>
+README.md<br>
 ---
 
 💡 **Why This Matters**:  
