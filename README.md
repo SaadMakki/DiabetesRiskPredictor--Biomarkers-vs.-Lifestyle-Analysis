@@ -1,50 +1,67 @@
-# Diabetes Risk Prediction: Biomarkers vs. Lifestyle Factors
+# Diabetes Risk Prediction: ML Model Comparison
 
-🔍 **Can we predict diabetes risk without blood tests?**  
-This project compares machine learning models trained on **clinical biomarkers** (HbA1c, blood glucose) versus **lifestyle/demographic factors** (age, BMI, smoking history) to assess their effectiveness in diabetes risk prediction.
+## Overview
+This project evaluates multiple machine learning models for **diabetes risk prediction**, comparing their performance across key metrics. The goal is to determine the most effective model for accurate risk assessment.
 
-## 📌 Key Objectives
-- **Predict diabetes risk** using non-invasive, easily accessible features (no blood tests).  
-- **Identify key predictors** (e.g., BMI, hypertension) through feature importance analysis.  
-- **Benchmark performance** against clinical baselines (HbA1c > 6.5%) and state-of-the-art models.  
+## Dataset
+- The dataset consists of patient health indicators.
+- Features include age, glucose levels, BMI, and other relevant medical attributes.
+- Labels indicate whether a patient is at risk for diabetes.
 
-## 📂 Dataset  
-- **Source**: [Diabetes Prediction Dataset](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset) (20,000 samples).  
-- **Features**:  
-  - *Excluded*: HbA1c, Blood Glucose (for non-blood models).  
-  - *Included*: Age, Gender, BMI, Hypertension, Heart Disease, Smoking History.  
+## Models Compared
+- **Random Forest (RF)**
+- **Gradient Boosting (GB)**
+- **XGBoost (XGB)**
 
-## 🤖 Models & Approach  
-1. **Baseline Models**:  
-   - **Clinical Rule**: Diagnose diabetes if HbA1c > 6.5%.  
-   - **Logistic Regression**: Trained on HbA1c and blood glucose.  
-2. **Lifestyle/Demographic Models**:  
-   - **XGBoost**, **Random Forest**, **Logistic Regression** (trained without blood tests).  
-3. **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score, AUC-ROC.  
+## Performance Metrics
+The following metrics were used to compare models:
+- **Precision**: Ability to avoid false positives.
+- **Recall**: Ability to detect true positives.
+- **F1 Score**: Harmonic mean of precision and recall.
+- **ROC AUC**: Overall model discrimination ability.
 
-## 🚀 Results  
-| Model Type          | Accuracy | AUC-ROC | Key Findings                          |  
-|---------------------|----------|---------|---------------------------------------|  
-| Clinical Rule       | XX%      | -       | Relies solely on HbA1c threshold.     |  
-| Blood Test (Logistic)| XX%      | XX%     | Simple but requires lab data.         |  
-| **Lifestyle (XGBoost)** | **XX%** | **XX%** | Achieved comparable performance without blood tests. |  
+## Baseline Model Performance
+| Model          | Precision | Recall | F1 Score | ROC AUC |
+|---------------|----------|--------|----------|---------|
+| Random Forest | 31.0     | 14.0   | 19.0     | 55.0    |
+| Gradient Boosting | 58.0     | 5.0    | 9.0      | 52.0    |
+| XGBoost       | 22.0     | 76.0   | 34.0     | 76.0    |
 
-- **Top Predictors**: BMI, Age, Hypertension (identified via SHAP values).  
+## Improved Model Performance
+| Model          | Precision | Recall | F1 Score | ROC AUC |
+|---------------|----------|--------|----------|---------|
+| Random Forest | 45.0     | 91.0   | 60.0     | 90.0    |
+| Gradient Boosting | 97.0     | 69.0   | 81.0     | 84.0    |
+| XGBoost       | 46.0     | 92.0   | 62.0     | 91.0    |
 
-## 🛠️ Tools  
-- **Python Libraries**: Pandas, Scikit-learn, XGBoost, SHAP, Matplotlib/Seaborn.  
-- **Techniques**: Feature engineering, hyperparameter tuning, cross-validation.  
+## Visual Comparison
+![Model Performance Comparison](comparison.png)
 
-## 🌍 Impact  
-This work demonstrates the potential of **non-invasive diabetes screening** using lifestyle and demographic data, offering a low-cost alternative for early detection in resource-limited settings.  
+## Key Takeaways
+- **Significant improvement** was observed after fine-tuning model parameters.
+- **Gradient Boosting and XGBoost** demonstrated the best performance overall.
+- **Hyperparameter tuning** and feature selection played a crucial role in boosting performance.
 
-📊 **Repo Structure**:  
-data/<br>
-models/<br>
-notebooks/<br>
-results/<br>
-README.md<br>
----
+## How to Run
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/yourusername/Diabetes-Risk-Prediction.git
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the notebook:
+   ```bash
+   jupyter notebook Diabetes_Risk_Prediction_ML_Comparison.ipynb
+   ```
 
-💡 **Why This Matters**:  
-Early diabetes prediction without blood tests could revolutionize preventive healthcare, especially in regions lacking lab infrastructure.  
+## Future Improvements
+- Testing on a **larger dataset** for better generalization.
+- Exploring **deep learning models** for enhanced accuracy.
+- Implementing an **interactive web app** for real-time risk prediction.
+
+## Author
+[Your Name]  
+[Your Contact Information]
+
