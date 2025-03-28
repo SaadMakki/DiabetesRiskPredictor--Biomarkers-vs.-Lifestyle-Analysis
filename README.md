@@ -62,6 +62,5 @@ The following metrics were used to compare models:
 - Implementing an **interactive web app** for real-time risk prediction.
 
 ## Author
-[Saad Makki]  
-[saadmakki116@gmail.com]
-
+Saad Makki<br> 
+saadmakki116@gmail.com
